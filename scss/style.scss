@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap');
+
+
+
+    //base
+  @import 'base/vars';
+  @import 'base/reset';
+  @import 'base/utilities';
+    //components
+  @import 'components/navbar';
+  @import 'components/footer';
+    //layouts
+  @import 'layouts/index';
+
+
+
+
+
+/* MENU */
+
+
+
+header {
+    position: fixed;
+    background-color: $color-negro;
+    width: 100%;
+    padding-top: 20px;
+    z-index: 9999;
+}
+
+
+
+
+/* MAIN */
+
+
+main {
+    padding-top: 200px;
+}
+
+.modelos {
+    display: flex;
+    justify-content: center;
+}
+.modelos img {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    object-fit: cover;
+}
+
+.titulodestacados h2 {
+    padding-top: 100px;
+    text-decoration: underline;
+}
+
+.titulodestacados a {
+    color: $color-blanco;
+    transition: .2s;
+}
+
+.titulodestacados h2 a:hover {
+    font-weight: bolder;
+    color: $color-lila;
+    font-size: 31px;
+}
+
+.destacados {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: center;
+    width: 100%;
+}
+
+
+.destacados img {
+    @include img (100%, auto, cover);
+    filter: blur(5px);
+}
+
+.destacados img:hover {
+  filter: blur(0);
+}
+
+.tituloedicionlim {
+ width: 100%;
+ height: auto;
+}
+
+.edicionlim {
+    padding-bottom: 20px;
+    color: $color-lila;
+    font-family:$fuente-principal;
+    text-shadow: 
+    1px 1px 0 $color-lila, 
+    2px 2px 0 $color-lila, 
+    3px 3px 0 rgb(133, 123, 226),
+    4px 4px 0 #a7a7a7;
+    text-decoration: underline;
+}
+
+
+//PRECIOS//
+
+.precios {
+  color: $color-blanco;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.off {
+  text-decoration: line-through;
+  color: $color-rojo;
+  font-weight: bold;
+  font-size: 20px;
+
+}
+
+
+/* PRODUCTOS */
+
+.productos {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 20px;
+}
+
+.productos div {
+width: 100%;
+height: auto;
+}
+
+.productos img {
+  @include img (100%, auto, cover);
+}
+
+
+
+/* CONTACTO */
+
+
+.titulo {
+    font-weight: bold;
+    margin: 0px;
+}
+
+.subtitulo {
+    font-family:$fuente-secundaria;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.form {
+    padding-bottom: 30px;
+    padding-left: 20px;
+    color: $color-blanco;
+    @include flex (column,center,center,none);
+}
+
+.form-control {
+    background-color: gray;
+    width: 50%;
+}
+
+.form-enviar {
+  background-color: gray;
+  color: $color-rojo;
+  font-weight: bolder;
+  width: 60px;
+  border: 2px solid $color-blanco;
+  border-radius: 3px;
+}
+
+.form-enviar:hover {
+  background-color:black;
+  text-decoration: underline;
+}
+
+.form-enviar:active {
+  transform: translateY(6px);
+}
+
+
+
+/* GUIA TALLES */
+
+
+
+.talles {
+  @include flex (column,center,center,20px);
+}
+
+.talles img {
+    justify-content: center;
+    @include img (500px, auto, cover)
+}
+
+.table {
+  width:  25%;
+  height: auto;
+}
+
+
+
+/* RESPONSIVE */
+
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 1088px) {
+
+    
+    .menu ul li a {
+      font-size: 15px;
+    }
+
+    
+    .info h3 {
+      font-size: 16px;
+    }
+
+
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    
+
+  /*Header*/
+
+  .menu ul {
+    @include flex (column,center,left,1px);
+    padding-top: 10px;
+    padding-bottom: none;
+    width: 100%;
+  }
+
+  .menu li {
+    width: 100%;
+  }
+
+  .menu li a {
+    font-size: 15px;
+    justify-content: center;
+  }
+
+
+  .menu_contacto ul {
+    @include flex (column,center,left,1px);
+    padding-top: 10px;
+    padding-bottom: none;
+    width: 100%;
+  }
+
+  .menu_contacto li {
+    width: 100%;
+  }
+
+  .menu_contacto li a {
+    font-size: 15px;
+    justify-content: center;
+  }
+
+
+/*MAIN*/
+
+    main {
+        padding-top:250px;
+    }
+
+
+    .destacados img{
+      @include img (400px, auto, cover);
+    }
+
+    .destacados {
+      @include flex (column,center,center,1px);
+    }
+
+    .edicionlim {
+      padding: 40px;
+    }
+
+/*PRODUCTOS*/    
+
+    .productos img{
+      width: 400px;
+    }
+
+    .productos {
+      @include flex (column,center,center,1px);
+    }
+
+    .productos div {
+      width: 100%;
+      height: auto;
+      @include flex (column,center,center,none); 
+    }
+
+    .productos img{
+      width: 400px;
+    }
+
+    
+  /*FOOTER*/
+    .info article {
+      @include flex (column,center,center,10px);
+      padding: 0%;
+    }
+    
+    .info h3 {
+      @include flex (column,center,center,10px);
+    
+    }
+
+
+}
