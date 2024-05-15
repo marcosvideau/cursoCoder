@@ -5,50 +5,41 @@
 
   @import '../layouts/index';
 
+.titulo {
+    font-family: $fuente-principal;
+    font-style: italic;
+}  
 
-.menu {
-    @include flex (row, center, center, 80px);
-    
-
-    ul {
-        list-style-type: none;
-        @include flex (row,center,center,80px);
-        padding-top: 25px;
-        padding-bottom: 15px;
-    }
-
-    li a{
-        text-decoration: none;
-        color: $color-blanco;
-        font-size: 20px;
-        transition: .2s;
-        &:hover {
-            font-weight: bold;
-            font-size: 22px;
-            text-decoration: underline;
-        }
-    }
+.subtitulo {
+    font-family: $fuente-principal;
+    padding-bottom: 20px;
 }
 
-.menu_contacto {
-    @include flex (row, center, center, 80px);
-    
 
+.menu {
+
+    @include flex (row, center, center, 0px);
+    
     ul {
+        margin-bottom: 0px;
         list-style-type: none;
         @include flex (row,center,center,80px);
-        padding-top: 20px;
     }
+
 
     li a{
         text-decoration: none;
         color: $color-blanco;
         font-size: 18px;
-        transition: .2s;
         &:hover {
             font-weight: bold;
-            font-size: 20px;
-            text-decoration: underline;
         }
     }
+}
+
+
+.linea-horizontal {
+    border:none; 
+    border-top: 2px solid white;
+    margin: 4px 0;
 }

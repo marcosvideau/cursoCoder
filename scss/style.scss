@@ -38,17 +38,6 @@ main {
     padding-top: 200px;
 }
 
-.modelos {
-    display: flex;
-    justify-content: center;
-}
-.modelos img {
-    width: 400px;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    object-fit: cover;
-}
 
 .titulodestacados h2 {
     padding-top: 100px;
@@ -83,13 +72,11 @@ main {
   filter: blur(0);
 }
 
-.tituloedicionlim {
- width: 100%;
- height: auto;
-}
+
 
 .edicionlim {
-    padding-bottom: 20px;
+    padding: 40px 0px 40px 0px;
+    font-size: 35px;
     color: $color-lila;
     font-family:$fuente-principal;
     text-shadow: 
@@ -98,23 +85,26 @@ main {
     3px 3px 0 rgb(133, 123, 226),
     4px 4px 0 #a7a7a7;
     text-decoration: underline;
+    font-style: italic;
 }
 
 
 //PRECIOS//
 
 .precios {
+  text-align: center;
   color: $color-blanco;
   font-weight: bold;
   font-size: 20px;
+  margin: 0 0px;
 }
 
 .off {
   text-decoration: line-through;
   color: $color-rojo;
   font-weight: bold;
-  font-size: 20px;
-
+  font-size: 18px;
+  margin: 0 0px;
 }
 
 
@@ -208,24 +198,35 @@ height: auto;
 
 
 
-@media only screen and (min-width: 768px) and (max-width: 1088px) {
+                    @media only screen and (min-width: 768px) and (max-width: 1088px) {
 
     
     .menu ul li a {
       font-size: 15px;
     }
 
+
+    .info article {
+      @include flex (row,center,center,40px);
+      text-align: right;
+  }
+
     
     .info h3 {
-      font-size: 16px;
-    }
+      @include flex (row,center,center,1px);
+      font-size: 17px;
+      
+  }
 
+  .contacto-redes {
+    @include flex (row,center,flex-start,240px);
+      padding-bottom: 20px;
+  }
 
 }
 
 
-
-@media only screen and (max-width: 768px) {
+                  @media only screen and (max-width: 768px) {
     
 
   /*Header*/
@@ -267,12 +268,11 @@ height: auto;
 /*MAIN*/
 
     main {
-        padding-top:250px;
+        padding-top:350px;
     }
 
-
     .destacados img{
-      @include img (400px, auto, cover);
+      @include img (350px, auto, cover);
     }
 
     .destacados {
@@ -281,12 +281,13 @@ height: auto;
 
     .edicionlim {
       padding: 40px;
+      font-size: 25px;
     }
 
 /*PRODUCTOS*/    
 
     .productos img{
-      width: 400px;
+      @include img (70%, auto, cover);
     }
 
     .productos {
@@ -299,12 +300,12 @@ height: auto;
       @include flex (column,center,center,none); 
     }
 
-    .productos img{
-      width: 400px;
-    }
-
     
   /*FOOTER*/
+    .ubi {
+      display: none;
+    }
+    
     .info article {
       @include flex (column,center,center,10px);
       padding: 0%;
@@ -312,8 +313,19 @@ height: auto;
     
     .info h3 {
       @include flex (column,center,center,10px);
-    
+      font-size: 15px;
     }
 
-
+    .linea {
+      display: none;
+    }
+    
+    .contacto-redes {
+      @include flex (row,center,flex-start,100px);
+        padding-bottom: 20px;
+    }
+    
+    .contactanos h3, .seguinos h3 {
+      font-size: 14px;
+    }
 }
